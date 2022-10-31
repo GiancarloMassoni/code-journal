@@ -16,22 +16,25 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="container font">
-    <div class="row">
-      <div class="column-full background-color-head">
-        <header>
+  <header class="background-color-head">
+    <div class="container font">
+      <div class="row">
+        <div class="column-full">
           <h1>Code Journal</h1>
-        </header>
+        </div>
       </div>
     </div>
+  </header>
+  <main class="container">
     <div class="row">
       <div class="column-full">
         <h1>New Entry</h1>
       </div>
     </div>
     <div data-view="entry-form">
+
       <form class="entry-form">
-        <main class="row">
+        <div class="row">
           <div class="column-half">
             <img src="images/placeholder-image-square.jpg" alt="Placeholder Image">
           </div>
@@ -43,7 +46,7 @@
               <input type="text" name="photo-url" id="photo-url" required="true">
             </label>
           </div>
-        </main>
+        </div>
         <div class="row margin-top">
           <div class="column-full">
             <label for="notes">Notes</label>
@@ -56,10 +59,9 @@
           </div>
         </div>
       </form>
+
     </div>
-
-
-  </div>
+  </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
