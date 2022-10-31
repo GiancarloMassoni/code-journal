@@ -2,10 +2,9 @@ var $photoUrl = document.querySelector('#photo-url');
 var $photoOutput = document.querySelector('img');
 var $form = document.querySelector('.entry-form');
 var nextEntryId = 0;
-var formInputs = {};
 
 $photoUrl.addEventListener('input', updatePhoto);
-$form.addEventListener('submit', updateForm);
+$form.addEventListener('submit', submitForm);
 
 function updatePhoto(event) {
   if ($photoUrl !== '') {
@@ -13,9 +12,9 @@ function updatePhoto(event) {
   }
 }
 
-function updateForm(event) {
+function submitForm(event) {
   event.preventDefault();
-
+  var formInputs = {};
   var title = document.getElementById('title');
   var photoUrl = document.getElementById('photo-url');
   var notes = document.getElementById('notes');
@@ -24,7 +23,8 @@ function updateForm(event) {
   formInputs.photoUrl = photoUrl.value;
   formInputs.notes = notes.value;
   formInputs.nextEntryId = nextEntryId;
-
-  nextEntryId++;
+  data.entries.unshift(formInputs);
+  $form.reset();
+  $photoOutput.setAttribute('src', 'images/placeholder-image-square.jpg');
 
 }
