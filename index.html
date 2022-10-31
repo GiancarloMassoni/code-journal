@@ -36,16 +36,18 @@
             <img src="images/placeholder-image-square.jpg" alt="Placeholder Image">
           </div>
           <div class="column-half">
-            <label for="title">Title</label>
-            <input type="text" name="title" id="title">
-            <label for="photo-url">Photo URL</label>
-            <input type="text" name="photo-url" id="photo-url">
+            <label for="title">Title
+              <input type="text" name="title" id="title" required="true">
+            </label>
+            <label for="photo-url">Photo URL
+              <input type="text" name="photo-url" id="photo-url" required="true">
+            </label>
           </div>
         </main>
         <div class="row margin-top">
           <div class="column-full">
             <label for="notes">Notes</label>
-            <textarea name="notes" id="notes" cols="101" rows="10"></textarea>
+            <textarea name="notes" id="notes" cols="101" rows="10" required="true"></textarea>
           </div>
         </div>
         <div class="row">
