@@ -1,0 +1,18 @@
+.font {
+  font-family: "Font Awesome", sans-serif;
+}
+
+.background-color-head {
+  background-color: #562b81;
+}
+
+header {
+  font-size: 30px;
+  padding: 15px;
+  color: white;
+}
+
+img {
+  object-fit: contain;
+  height: 500px;
+}
