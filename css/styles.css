@@ -17,6 +17,15 @@ header h1 {
   padding-right: 20px;
 }
 
+.row h1 {
+  font-weight: 100;
+}
+
+.row h2 {
+  font-weight: 100;
+  font-size: 40px;
+}
+
 header div {
   font-size: 25px;
   color: white;

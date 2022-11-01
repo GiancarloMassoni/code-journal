@@ -12,14 +12,14 @@ $tab.addEventListener('click', swapViews);
 function swapViews(event) {
 
   for (var i = 0; i < $view.length; i++) {
-    if ($view[i].getAttribute('class') === 'view') {
+    if ($view[i].getAttribute('data-view') === data.view) {
       $view[i].className = 'view hidden';
     } else {
       $view[i].className = 'view';
       var viewData = $view[i].getAttribute('data-view');
-      data.view = viewData;
     }
   }
+  data.view = viewData;
 
 }
 
@@ -88,13 +88,22 @@ function createDomTree(event) {
     var $entry = renderEntry(data.entries[i]);
     $list.appendChild($entry);
   }
-  if (data.view === 'entry-form') {
-    $view[0].className = 'view';
-    $view[1].className = 'view hidden';
-  } else if (data.view === 'entries') {
-    $view[0].className = 'view hidden';
-    $view[1].className = 'view';
+
+  for (i = 0; i < $view.length; i++) {
+    if ($view[i].getAttribute('data-view') === data.view) {
+      $view[i].className = 'view';
+    } else {
+      $view[i].className = 'view hidden';
+    }
   }
+
+  // if (data.view === 'entry-form') {
+  //   $view[0].className = 'view';
+  //   $view[1].className = 'view hidden';
+  // } else if (data.view === 'entries') {
+  //   $view[0].className = 'view hidden';
+  //   $view[1].className = 'view';
+  // }
 }
 
 function domTreeOnSubmit(entry) {
