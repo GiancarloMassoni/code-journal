@@ -12,11 +12,13 @@ $tab.addEventListener('click', swapEntries);
 function swapEntries(event) {
   $view[0].className = 'view hidden';
   $view[1].className = 'view';
+  data.view = 'entries';
 }
 
 function swapHome(event) {
   $view[0].className = 'view';
   $view[1].className = 'view hidden';
+  data.view = 'entry-form';
 }
 
 $photoUrlInput.addEventListener('input', updatePhoto);
@@ -84,6 +86,13 @@ function createDomTree(event) {
     var $entry = renderEntry(data.entries[i]);
     $list.appendChild($entry);
   }
+  if (data.view === 'entry-form') {
+    $view[0].className = 'view';
+    $view[1].className = 'view hidden';
+  } else if (data.view === 'entries') {
+    $view[0].className = 'view hidden';
+    $view[1].className = 'view';
+  }
 }
 
 function domTreeOnSubmit(entry) {
@@ -94,9 +103,3 @@ function domTreeOnSubmit(entry) {
 }
 
 window.addEventListener('DOMContentLoaded', createDomTree);
-
-window.addEventListener('beforeunload', dataView);
-
-function dataView(event) {
-
-}
