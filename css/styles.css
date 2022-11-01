@@ -1,0 +1,65 @@
+.font {
+  font-family: "Font Awesome", sans-serif;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+.background-color-head {
+  background-color: #562b81;
+}
+
+header h1 {
+  font-size: 20px;
+  color: white;
+  font-weight: 100;
+}
+
+.column-full h1 {
+  font-weight: 200;
+}
+
+img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+input {
+  height: 40px;
+  border: 1px solid;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-color: #cbcbcb;
+  border-radius: 5px;
+}
+
+#notes {
+  height: 150px;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.save-button {
+  background-color: #562b81;
+  color: white;
+  border-radius: 5px;
+  border-color: #562b81;
+  border-style: solid;
+  height: 30px;
+  width: 70px;
+  margin-bottom: 50px;
+}
