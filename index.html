@@ -21,13 +21,13 @@
       <div class="row padding">
         <div class="column-full">
           <h1 class="inline">Code Journal</h1>
-          <div class="inline" data-view="entries">Entries</div>
+          <div class="tab inline" data-view="entries">Entries</div>
         </div>
       </div>
     </div>
   </header>
   <main class="container font">
-    <div class="view hidden" data-view="entry-form">
+    <div class="view" data-view="entry-form">
       <div class="row">
         <div class="column-full">
           <h1>New Entry</h1>
@@ -42,8 +42,8 @@
             <label for="title"> Title
               <input type="text" name="title" id="title" required="true">
             </label>
-            <label for="photo-url"> Photo URL
-              <input type="text" name="photo-url" id="photo-url" required="true">
+            <label for="photourl"> Photo URL
+              <input type="text" name="photourl" id="photo-url" required="true">
             </label>
           </div>
         </div>
@@ -60,7 +60,7 @@
         </div>
       </form>
     </div>
-    <div class="view" data-view="entries">
+    <div class="view hidden" data-view="entries">
       <div class="row">
         <div class="column-half-entries padding">
           <h1 class="inline">Entries</h1>
@@ -69,10 +69,8 @@
           <button class="new-button">NEW</button>
         </div>
       </div>
-      <ul>
-        <li class="list">
+      <ul class="list">
 
-        </li>
       </ul>
     </div>
   </main>

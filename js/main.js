@@ -1,6 +1,23 @@
 var $photoUrlInput = document.querySelector('#photo-url');
 var $previewImage = document.querySelector('.preview-image');
 var $form = document.querySelector('.entry-form');
+var $tab = document.querySelector('.tab');
+var $view = document.querySelectorAll('.view');
+var $newButton = document.querySelector('.new-button');
+
+$newButton.addEventListener('click', swapHome);
+
+$tab.addEventListener('click', swapEntries);
+
+function swapEntries(event) {
+  $view[0].className = 'view hidden';
+  $view[1].className = 'view';
+}
+
+function swapHome(event) {
+  $view[0].className = 'view';
+  $view[1].className = 'view hidden';
+}
 
 $photoUrlInput.addEventListener('input', updatePhoto);
 $form.addEventListener('submit', submitForm);
@@ -13,16 +30,13 @@ function updatePhoto(event) {
 
 function submitForm(event) {
   event.preventDefault();
-
   var entry = {};
-  var title = document.getElementById('title');
-  var photoUrlInput = document.getElementById('placeholder-image');
-  var notes = document.getElementById('notes');
 
-  entry.title = title.value;
-  entry.photoUrl = photoUrlInput.value;
-  entry.notes = notes.value;
+  entry.title = $form.elements.title.value;
+  entry.photoUrl = $form.elements.photourl.value;
+  entry.notes = $form.elements.notes.value;
   entry.entryId = data.nextEntryId;
+
   data.entries.unshift(entry);
   $form.reset();
   $previewImage.setAttribute('src', 'images/placeholder-image-square.jpg');
@@ -30,8 +44,11 @@ function submitForm(event) {
 }
 
 function renderEntry(entry) {
+  var li = document.createElement('li');
+
   var row = document.createElement('div');
   row.setAttribute('class', 'row');
+  li.appendChild(row);
 
   var columnHalf = document.createElement('div');
   columnHalf.setAttribute('class', 'column-half padding');
