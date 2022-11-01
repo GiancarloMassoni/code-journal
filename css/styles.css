@@ -1,5 +1,5 @@
 .font {
-  font-family: "Font Awesome", sans-serif;
+  font-family: sans-serif, "Times New Roman";
 }
 
 body {
@@ -79,4 +79,29 @@ textarea {
 .padding {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.line-height {
+  line-height: 25px;
+}
+
+.new-button {
+  background-color: #562b81;
+  color: white;
+  border-radius: 5px;
+  border-color: #562b81;
+  border-style: solid;
+  height: 40px;
+  width: 80px;
+  font-size: 20px;
+  margin-top: 18px;
+}
+
+.align-center {
+  align-items: center;
 }
