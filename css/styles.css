@@ -11,9 +11,17 @@ body {
 }
 
 header h1 {
-  font-size: 20px;
+  font-size: 30px;
   color: white;
   font-weight: 100;
+  padding-right: 20px;
+}
+
+header div {
+  font-size: 25px;
+  color: white;
+  font-weight: 100;
+  padding-right: 20px;
 }
 
 .column-full h1 {
@@ -62,4 +70,13 @@ textarea {
   height: 30px;
   width: 70px;
   margin-bottom: 50px;
+}
+
+.inline {
+  display: inline;
+}
+
+.padding {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
