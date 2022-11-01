@@ -5,20 +5,22 @@ var $tab = document.querySelector('.tab');
 var $view = document.querySelectorAll('.view');
 var $newButton = document.querySelector('.new-button');
 
-$newButton.addEventListener('click', swapHome);
+$newButton.addEventListener('click', swapViews);
 
-$tab.addEventListener('click', swapEntries);
+$tab.addEventListener('click', swapViews);
 
-function swapEntries(event) {
-  $view[0].className = 'view hidden';
-  $view[1].className = 'view';
-  data.view = 'entries';
-}
+function swapViews(event) {
 
-function swapHome(event) {
-  $view[0].className = 'view';
-  $view[1].className = 'view hidden';
-  data.view = 'entry-form';
+  for (var i = 0; i < $view.length; i++) {
+    if ($view[i].getAttribute('class') === 'view') {
+      $view[i].className = 'view hidden';
+    } else {
+      $view[i].className = 'view';
+      var viewData = $view[i].getAttribute('data-view');
+      data.view = viewData;
+    }
+  }
+
 }
 
 $photoUrlInput.addEventListener('input', updatePhoto);
@@ -45,7 +47,7 @@ function submitForm(event) {
   data.nextEntryId++;
 
   domTreeOnSubmit(entry);
-  swapEntries();
+  swapViews();
 }
 
 function renderEntry(entry) {
