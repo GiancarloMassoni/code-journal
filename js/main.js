@@ -1,30 +1,30 @@
-var $photoUrl = document.querySelector('#photo-url');
-var $photoOutput = document.querySelector('img');
+var $photoUrlInput = document.querySelector('#photo-url');
+var $previewImage = document.querySelector('.preview-image');
 var $form = document.querySelector('.entry-form');
-var nextEntryId = 0;
 
-$photoUrl.addEventListener('input', updatePhoto);
+$photoUrlInput.addEventListener('input', updatePhoto);
 $form.addEventListener('submit', submitForm);
 
 function updatePhoto(event) {
-  if ($photoUrl !== '') {
-    $photoOutput.setAttribute('src', event.target.value);
+  if ($photoUrlInput !== '') {
+    $previewImage.setAttribute('src', event.target.value);
   }
 }
 
 function submitForm(event) {
   event.preventDefault();
-  var formInputs = {};
+
+  var entry = {};
   var title = document.getElementById('title');
-  var photoUrl = document.getElementById('photo-url');
+  var photoUrlInput = document.getElementById('placeholder-image');
   var notes = document.getElementById('notes');
 
-  formInputs.title = title.value;
-  formInputs.photoUrl = photoUrl.value;
-  formInputs.notes = notes.value;
-  formInputs.nextEntryId = nextEntryId;
-  data.entries.unshift(formInputs);
+  entry.title = title.value;
+  entry.photoUrl = photoUrlInput.value;
+  entry.notes = notes.value;
+  entry.EntryId = data.nextEntryId;
+  data.entries.unshift(entry);
   $form.reset();
-  $photoOutput.setAttribute('src', 'images/placeholder-image-square.jpg');
-
+  $previewImage.setAttribute('src', 'images/placeholder-image-square.jpg');
+  data.nextEntryId++;
 }

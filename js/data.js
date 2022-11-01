@@ -18,4 +18,3 @@ function saveToLocalStorage(event) {
   var dataJSON = JSON.stringify(data);
   localStorage.setItem('journal-entry', dataJSON);
 }
-data.nextEntryId++;
