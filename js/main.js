@@ -22,7 +22,7 @@ function submitForm(event) {
   entry.title = title.value;
   entry.photoUrl = photoUrlInput.value;
   entry.notes = notes.value;
-  entry.EntryId = data.nextEntryId;
+  entry.entryId = data.nextEntryId;
   data.entries.unshift(entry);
   $form.reset();
   $previewImage.setAttribute('src', 'images/placeholder-image-square.jpg');
