@@ -59,7 +59,11 @@ function renderEntry(entry) {
 
 var $list = document.querySelector('.list');
 
-for (var i = 0; i < data.entries.length; i++) {
-  var $entry = renderEntry(data.entries[i]);
-  $list.appendChild($entry);
+function createDomTree(event) {
+  for (var i = 0; i < data.entries.length; i++) {
+    var $entry = renderEntry(data.entries[i]);
+    $list.appendChild($entry);
+  }
 }
+
+window.addEventListener('DOMContentLoaded', createDomTree);
