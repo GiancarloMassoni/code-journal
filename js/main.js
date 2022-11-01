@@ -41,6 +41,9 @@ function submitForm(event) {
   $form.reset();
   $previewImage.setAttribute('src', 'images/placeholder-image-square.jpg');
   data.nextEntryId++;
+
+  domTreeOnSubmit(entry);
+  swapEntries();
 }
 
 function renderEntry(entry) {
@@ -59,7 +62,7 @@ function renderEntry(entry) {
   columnHalf.appendChild(img);
 
   var columnHalfLine = document.createElement('div');
-  columnHalfLine.setAttribute('class', 'column-half line-height padding');
+  columnHalfLine.setAttribute('class', 'column-half line-height');
   row.appendChild(columnHalfLine);
 
   var h2 = document.createElement('h2');
@@ -70,7 +73,7 @@ function renderEntry(entry) {
   p.textContent = entry.notes;
   columnHalfLine.appendChild(p);
 
-  return row;
+  return li;
 
 }
 
@@ -83,4 +86,17 @@ function createDomTree(event) {
   }
 }
 
+function domTreeOnSubmit(entry) {
+
+  var submitEntry = renderEntry(entry);
+  $list.prepend(submitEntry);
+
+}
+
 window.addEventListener('DOMContentLoaded', createDomTree);
+
+window.addEventListener('beforeunload', dataView);
+
+function dataView(event) {
+
+}
