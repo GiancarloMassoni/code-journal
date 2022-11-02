@@ -105,12 +105,16 @@ ul {
   border-radius: 5px;
   border-color: #562b81;
   border-style: solid;
-  height: 40px;
-  width: 80px;
   font-size: 20px;
-  margin-top: 18px;
+  margin-top: 0;
+  padding: 3px 10px;
 }
 
 .align-center {
   align-items: center;
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
 }

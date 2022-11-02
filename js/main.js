@@ -96,14 +96,6 @@ function createDomTree(event) {
       $view[i].className = 'view hidden';
     }
   }
-
-  // if (data.view === 'entry-form') {
-  //   $view[0].className = 'view';
-  //   $view[1].className = 'view hidden';
-  // } else if (data.view === 'entries') {
-  //   $view[0].className = 'view hidden';
-  //   $view[1].className = 'view';
-  // }
 }
 
 function domTreeOnSubmit(entry) {
