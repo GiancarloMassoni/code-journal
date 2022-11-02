@@ -1,5 +1,5 @@
 .font {
-  font-family: "Font Awesome", sans-serif;
+  font-family: sans-serif, "Times New Roman";
 }
 
 body {
@@ -11,9 +11,26 @@ body {
 }
 
 header h1 {
-  font-size: 20px;
+  font-size: 30px;
   color: white;
   font-weight: 100;
+  padding-right: 20px;
+}
+
+.row h1 {
+  font-weight: 100;
+}
+
+.row h2 {
+  font-weight: 100;
+  font-size: 40px;
+}
+
+header div {
+  font-size: 25px;
+  color: white;
+  font-weight: 100;
+  padding-right: 20px;
 }
 
 .column-full h1 {
@@ -62,4 +79,42 @@ textarea {
   height: 30px;
   width: 70px;
   margin-bottom: 50px;
+}
+
+.inline {
+  display: inline;
+}
+
+.padding {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.line-height {
+  line-height: 25px;
+}
+
+.new-button {
+  background-color: #562b81;
+  color: white;
+  border-radius: 5px;
+  border-color: #562b81;
+  border-style: solid;
+  font-size: 20px;
+  margin-top: 0;
+  padding: 3px 10px;
+}
+
+.align-center {
+  align-items: center;
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
 }

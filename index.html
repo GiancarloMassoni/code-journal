@@ -18,15 +18,16 @@
 <body>
   <header class="background-color-head">
     <div class="container font">
-      <div class="row">
+      <div class="row padding">
         <div class="column-full">
-          <h1>Code Journal</h1>
+          <h1 class="inline">Code Journal</h1>
+          <a class="tab inline" data-view="entries">Entries</a>
         </div>
       </div>
     </div>
   </header>
   <main class="container font">
-    <div data-view="entry-form">
+    <div class="view" data-view="entry-form">
       <div class="row">
         <div class="column-full">
           <h1>New Entry</h1>
@@ -41,8 +42,8 @@
             <label for="title"> Title
               <input type="text" name="title" id="title" required="true">
             </label>
-            <label for="photo-url"> Photo URL
-              <input type="text" name="photo-url" id="photo-url" required="true">
+            <label for="photourl"> Photo URL
+              <input type="text" name="photourl" id="photo-url" required="true">
             </label>
           </div>
         </div>
@@ -58,7 +59,19 @@
           </div>
         </div>
       </form>
+    </div>
+    <div class="view hidden" data-view="entries">
+      <div class="row">
+        <div class="column-half-entries padding">
+          <h1 class="inline">Entries</h1>
+        </div>
+        <div class="column-half-entries text-right padding">
+          <a class="new-button" data-view="entry-form">NEW</a>
+        </div>
+      </div>
+      <ul class="list">
 
+      </ul>
     </div>
   </main>
   <script src="js/data.js"></script>
