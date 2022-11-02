@@ -118,3 +118,11 @@ a:hover,
 button:hover {
   cursor: pointer;
 }
+
+.fa-solid.fa-pencil {
+  color: #562b81;
+}
+
+.space-evenly {
+  justify-content: space-between;
+}

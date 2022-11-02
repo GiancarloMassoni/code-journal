@@ -69,9 +69,18 @@ function renderEntry(entry) {
   columnHalfLine.setAttribute('class', 'column-half line-height');
   row.appendChild(columnHalfLine);
 
+  var smallRow = document.createElement('div');
+  smallRow.setAttribute('class', 'row');
+  columnHalfLine.appendChild(smallRow);
+
   var h2 = document.createElement('h2');
   h2.textContent = entry.title;
-  columnHalfLine.appendChild(h2);
+  h2.setAttribute('class', 'column-half-entries');
+  smallRow.appendChild(h2);
+
+  var pencil = document.createElement('i');
+  pencil.setAttribute('class', 'column-half-entries fa-solid fa-2x fa-pencil text-right padding');
+  smallRow.appendChild(pencil);
 
   var p = document.createElement('p');
   p.textContent = entry.notes;
