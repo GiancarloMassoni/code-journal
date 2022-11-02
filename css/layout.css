@@ -36,3 +36,11 @@
 .column-half-entries {
   width: 50%;
 }
+
+.column-five-sixths {
+  width: calc(500% / 6);
+}
+
+.column-one-sixth {
+  width: calc(100% / 6);
+}
