@@ -5,6 +5,8 @@ var $tab = document.querySelector('.tab');
 var $view = document.querySelectorAll('.view');
 var $newButton = document.querySelector('.new-button');
 var $h1 = document.querySelector('.new-entry');
+var $deleteBtn = document.querySelector('#delete-btn');
+var $saveBtn = document.querySelector('#save-btn');
 
 $newButton.addEventListener('click', swapViews);
 
@@ -25,6 +27,8 @@ function swapViews(event) {
   $form.reset();
   $previewImage.setAttribute('src', 'images/placeholder-image-square.jpg');
   data.editing = null;
+  $deleteBtn.className = 'column-half-entries hidden';
+  $saveBtn.className = 'column-full text-right';
 }
 
 $photoUrlInput.addEventListener('input', updatePhoto);
@@ -149,6 +153,8 @@ function editEntry(event) {
 
   if (event.target && event.target.tagName === 'I') {
     swapViews();
+    $deleteBtn.className = 'column-half-entries';
+    $saveBtn.className = 'column-half-entries text-right';
     var id = event.target.closest('li').getAttribute('data-entry-id');
     var numId = parseInt(id);
     for (var i = 0; i < data.entries.length; i++) {

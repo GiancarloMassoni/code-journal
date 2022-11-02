@@ -125,3 +125,7 @@ button:hover {
 .space-evenly {
   justify-content: space-between;
 }
+
+#delete-btn a {
+  color: red;
+}
