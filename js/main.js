@@ -50,8 +50,16 @@ function submitForm(event) {
     data.editing.title = $form.elements.title.value;
     data.editing.photoUrl = $form.elements.photourl.value;
     data.editing.notes = $form.elements.notes.value;
-    var $oldTree = document.getElementById(data.editing.entryId);
-    $oldTree.replaceWith(renderEntry(data.editing));
+
+    var $fullList = document.querySelectorAll('li');
+    for (var i = 0; i < $fullList.length; i++) {
+      var attr = $fullList[i].getAttribute('data-entry-id');
+      var attrNum = parseInt(attr);
+      if (data.editing.entryId === attrNum) {
+        $fullList[i].replaceWith(renderEntry(data.editing));
+      }
+    }
+
   } else {
     data.entries.unshift(entry);
     domTreeOnSubmit(entry);
@@ -68,7 +76,7 @@ function submitForm(event) {
 
 function renderEntry(entry) {
   var li = document.createElement('li');
-  li.setAttribute('id', entry.entryId);
+  li.setAttribute('data-entry-id', entry.entryId);
 
   var row = document.createElement('div');
   row.setAttribute('class', 'row');
@@ -141,7 +149,7 @@ function editEntry(event) {
 
   if (event.target && event.target.tagName === 'I') {
     swapViews();
-    var id = event.target.closest('li').getAttribute('id');
+    var id = event.target.closest('li').getAttribute('data-entry-id');
     var numId = parseInt(id);
     for (var i = 0; i < data.entries.length; i++) {
       if (numId === data.entries[i].entryId) {

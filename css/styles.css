@@ -113,6 +113,10 @@ ul {
   color: #562b81;
 }
 
+.fa-solid.fa-pencil:hover {
+  cursor: pointer;
+}
+
 a:hover,
 button:hover {
   cursor: pointer;
