@@ -22,8 +22,7 @@ header h1 {
 }
 
 .row h2 {
-  font-weight: 100;
-  font-size: 40px;
+  font-size: 25px;
 }
 
 header div {
@@ -110,11 +109,19 @@ ul {
   padding: 3px 10px;
 }
 
-.align-center {
-  align-items: center;
+.fa-solid.fa-pencil {
+  color: #562b81;
+}
+
+.fa-solid.fa-pencil:hover {
+  cursor: pointer;
 }
 
 a:hover,
 button:hover {
   cursor: pointer;
+}
+
+.space-evenly {
+  justify-content: space-between;
 }
