@@ -116,3 +116,25 @@ function domTreeOnSubmit(entry) {
 }
 
 window.addEventListener('DOMContentLoaded', createDomTree);
+
+var $singleEntry = document.querySelector('ul');
+
+$singleEntry.addEventListener('click', editEntry);
+
+function editEntry(event) {
+
+  if (event.target && event.target.tagName === 'I') {
+    swapViews();
+    var id = event.target.closest('li').getAttribute('id');
+    var numId = parseInt(id);
+    for (var i = 0; i < data.entries.length; i++) {
+      if (numId === data.entries[i].entryId) {
+        $previewImage.setAttribute('src', data.entries[i].photoUrl);
+        $form.elements.title.value = data.entries[i].title;
+        $form.elements.photourl.value = data.entries[i].photoUrl;
+        $form.elements.notes.value = data.entries[i].notes;
+
+      }
+    }
+  }
+}
