@@ -2,6 +2,31 @@
   display: none !important;
 }
 
+body {
+  position: relative;
+}
+
+.overlay {
+  background-color: rgb(0 0 0 / 80%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 200%;
+  width: 100%;
+  display: flex;
+}
+
+.popup {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  height: 180px;
+}
+
 .container {
   max-width: 575px;
   margin: 0 auto;

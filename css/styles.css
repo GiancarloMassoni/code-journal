@@ -129,3 +129,29 @@ button:hover {
 #delete-btn a {
   color: red;
 }
+
+.popup h3 {
+  padding: 20px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+#cancel-btn {
+  background-color: #b6b6b6;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+#confirm-btn {
+  background-color: #dc2526;
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 5px;
+}

@@ -5,12 +5,51 @@ var $tab = document.querySelector('.tab');
 var $view = document.querySelectorAll('.view');
 var $newButton = document.querySelector('.new-button');
 var $h1 = document.querySelector('.new-entry');
-var $deleteBtn = document.querySelector('#delete-btn');
-var $saveBtn = document.querySelector('#save-btn');
+var $deleteBtnContainer = document.querySelector('#delete-btn');
+var $saveBtnContainer = document.querySelector('#save-btn');
+var $deleteBtn = document.querySelector('#delete-entry-button');
+var $overlay = document.querySelector('.overlay');
+var $cancelBtn = document.querySelector('#cancel-btn');
+var $confirmBtn = document.querySelector('#confirm-btn');
+
+$confirmBtn.addEventListener('click', deleteEntry);
+
+$cancelBtn.addEventListener('click', cancelPrompt);
+
+$deleteBtn.addEventListener('click', quitPrompt);
 
 $newButton.addEventListener('click', swapViews);
 
 $tab.addEventListener('click', swapViews);
+
+function deleteEntry(event) {
+
+  var $fullList = document.querySelectorAll('li');
+  for (var i = 0; i < $fullList.length; i++) {
+    var attr = $fullList[i].getAttribute('data-entry-id');
+    var attrNum = parseInt(attr);
+    if (data.editing.entryId === attrNum) {
+      $fullList[i].remove();
+      for (i = 0; i < data.entries.length; i++) {
+        if (data.editing.entryId === data.entries[i].entryId) {
+          data.entries.splice(i, 1);
+        }
+      }
+      swapViews();
+      $overlay.className = 'overlay positioned hidden';
+
+    }
+  }
+
+}
+
+function cancelPrompt(event) {
+  $overlay.className = 'overlay positioned hidden';
+}
+
+function quitPrompt(event) {
+  $overlay.className = 'overlay positioned';
+}
 
 function swapViews(event) {
 
@@ -27,8 +66,8 @@ function swapViews(event) {
   $form.reset();
   $previewImage.setAttribute('src', 'images/placeholder-image-square.jpg');
   data.editing = null;
-  $deleteBtn.className = 'column-half-entries hidden';
-  $saveBtn.className = 'column-full text-right';
+  $deleteBtnContainer.className = 'column-half-entries hidden';
+  $saveBtnContainer.className = 'column-full text-right';
 }
 
 $photoUrlInput.addEventListener('input', updatePhoto);
@@ -153,8 +192,8 @@ function editEntry(event) {
 
   if (event.target && event.target.tagName === 'I') {
     swapViews();
-    $deleteBtn.className = 'column-half-entries';
-    $saveBtn.className = 'column-half-entries text-right';
+    $deleteBtnContainer.className = 'column-half-entries';
+    $saveBtnContainer.className = 'column-half-entries text-right';
     var id = event.target.closest('li').getAttribute('data-entry-id');
     var numId = parseInt(id);
     for (var i = 0; i < data.entries.length; i++) {
